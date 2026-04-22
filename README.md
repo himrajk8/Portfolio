@@ -62,7 +62,7 @@ public/
 ```bash
 # Clone the repository
 git clone https://github.com/himrajk8/Portfolio.git
-cd portfolio-website
+cd Portfolio
 
 # Install dependencies
 npm install
