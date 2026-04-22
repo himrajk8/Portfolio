@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import AboutMe from "@/components/AboutMe";
 import Timeline from "@/components/Timeline";
 import Matrix from "@/components/Matrix";
 import CaseStudies from "@/components/CaseStudies";
@@ -10,6 +11,7 @@ export default function Home() {
     <main className="min-h-screen relative selection:bg-indigo/30 selection:text-indigo">
       <Header />
       <Hero />
+      <AboutMe />
       <Timeline />
       <Matrix />
       <CaseStudies />

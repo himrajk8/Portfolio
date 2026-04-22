@@ -8,7 +8,7 @@ export default function Header() {
         <div className="text-xl font-bold tracking-tight text-space">
           HIM RAJ
         </div>
-        
+
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-space-light">
           <a href="#experience" className="hover:text-indigo transition-colors">Experience</a>
           <a href="#tech-stack" className="hover:text-indigo transition-colors">Tech Stack</a>
@@ -18,8 +18,8 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <a 
-            href="/resume.pdf" 
+          <a
+            href="/resume.pdf"
             className="flex items-center gap-2 bg-indigo hover:bg-indigo-hover text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             <Download className="w-4 h-4" />

@@ -38,13 +38,13 @@ export default function CaseStudies() {
         {cases.map((item, index) => (
           <div key={index} className="flex flex-col h-full bg-white-adaptive p-8 rounded-3xl border border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_32px_rgba(111,0,255,0.08)] transition-all duration-300 group">
             <h3 className="text-2xl font-bold text-space mb-6 group-hover:text-indigo transition-colors">{item.title}</h3>
-            
+
             <div className="flex-grow space-y-6">
               <div>
                 <h4 className="text-sm font-bold uppercase tracking-wider text-space-light mb-2">The Problem</h4>
                 <p className="text-space-light leading-relaxed">{item.problem}</p>
               </div>
-              
+
               <div>
                 <h4 className="text-sm font-bold uppercase tracking-wider text-space-light mb-2">The Solution</h4>
                 <p className="text-space-light leading-relaxed">{item.solution}</p>
@@ -59,7 +59,7 @@ export default function CaseStudies() {
                   </span>
                 ))}
               </div>
-              
+
               <a href="#" className="inline-flex items-center gap-2 text-indigo font-semibold hover:text-indigo-hover transition-colors">
                 {item.linkText}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
