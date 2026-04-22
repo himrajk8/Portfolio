@@ -21,47 +21,47 @@ const techStack = [
   {
     category: "Frontend",
     items: [
-      { name: "React",        icon: <SiReact       className="text-[#61DAFB] text-3xl" /> },
-      { name: "HTML5",        icon: <SiHtml5        className="text-[#E34F26] text-3xl" /> },
-      { name: "CSS3",         icon: <SiCss          className="text-[#1572B6] text-3xl" /> },
-      { name: "JavaScript",   icon: <SiJavascript   className="text-[#F7DF1E] text-3xl" /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss  className="text-[#06B6D4] text-3xl" /> },
+      { name: "React", icon: <SiReact className="text-[#61DAFB] text-3xl" /> },
+      { name: "HTML5", icon: <SiHtml5 className="text-[#E34F26] text-3xl" /> },
+      { name: "CSS3", icon: <SiCss className="text-[#1572B6] text-3xl" /> },
+      { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E] text-3xl" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[#06B6D4] text-3xl" /> },
     ],
   },
   {
     category: "Backend",
     items: [
-      { name: "Node.js",    icon: <SiNodedotjs      className="text-[#339933] text-3xl" /> },
-      { name: "Express.js", icon: <SiExpress        className="dark:text-white text-3xl" /> },
-      { name: "REST API",   icon: <FaNetworkWired   className="text-gray-500 text-3xl" /> },
-      { name: "MySQL",      icon: <SiMysql          className="text-[#4479A1] text-3xl" /> },
+      { name: "Node.js", icon: <SiNodedotjs className="text-[#339933] text-3xl" /> },
+      { name: "Express.js", icon: <SiExpress className="dark:text-white text-3xl" /> },
+      { name: "REST API", icon: <FaNetworkWired className="text-gray-500 text-3xl" /> },
+      { name: "MySQL", icon: <SiMysql className="text-[#4479A1] text-3xl" /> },
     ],
   },
   {
     category: "Tools & Others",
     items: [
-      { name: "Git",      icon: <SiGit      className="text-[#F05032] text-3xl" /> },
-      { name: "GitHub",   icon: <SiGithub   className="dark:text-white text-3xl" /> },
-      { name: "VS Code",  icon: <Code2      className="text-[#007ACC] w-8 h-8" /> },
+      { name: "Git", icon: <SiGit className="text-[#F05032] text-3xl" /> },
+      { name: "GitHub", icon: <SiGithub className="dark:text-white text-3xl" /> },
+      { name: "VS Code", icon: <Code2 className="text-[#007ACC] w-8 h-8" /> },
       { name: "Firebase", icon: <SiFirebase className="text-[#FFCA28] text-3xl" /> },
-      { name: "Postman",  icon: <SiPostman  className="text-[#FF6C37] text-3xl" /> },
+      { name: "Postman", icon: <SiPostman className="text-[#FF6C37] text-3xl" /> },
     ],
   },
 ];
 
 export default function AboutMe() {
   return (
-    <section id="about" className="py-20 px-8 md:px-16 lg:px-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+    <section id="about" className="py-10 px-8 md:px-16 lg:px-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
 
         {/* ── LEFT: About Me ── */}
-        <div className="flex flex-col">
-          <div className="flex items-center gap-2 mb-6">
+        <div id="skills" className="flex flex-col">
+          <div className="flex items-center gap-2 mb-4">
             <span className="w-3 h-3 rounded-full bg-indigo inline-block flex-shrink-0" />
             <h2 className="text-2xl font-bold text-space">About Me</h2>
           </div>
 
-          <div className="space-y-4 mb-8 text-space-light leading-relaxed text-base flex-grow">
+          <div className="space-y-4 mb-5 text-space-light leading-relaxed text-base flex-grow">
             <p>
               I&apos;m{" "}
               <span className="text-indigo font-semibold">Him Raj</span>, a

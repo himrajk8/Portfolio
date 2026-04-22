@@ -1,61 +1,77 @@
+import { BarChart3, Cpu } from "lucide-react";
+
+const experiences = [
+  {
+    role: "Data Analyst",
+    company: "PW",
+    dateRange: ["May 2025", "Present"],
+    accent: "Analytics",
+    icon: BarChart3,
+    bullets: [
+      "Worked on analytics dashboards and reporting workflows.",
+      "Analyzed business data to surface actionable insights.",
+      "Collaborated with teams to improve data visibility.",
+    ],
+  },
+  {
+    role: "VLSI Design Intern",
+    company: "Maven Silicon",
+    dateRange: ["Aug 2023", "Oct 2023"],
+    accent: "VLSI Design",
+    icon: Cpu,
+    bullets: [
+      "Gained practical experience in designing and implementing SPI communication protocols in VLSI systems.",
+    ],
+  },
+];
+
 export default function Timeline() {
-  const experiences = [
-    {
-      title: "Senior Full-Stack Engineer",
-      company: "TechNova Solutions",
-      date: "2021 — Present",
-      bullets: [
-        "Led migration to React Native, reducing codebase size by 30% and accelerating feature delivery across iOS and Android.",
-        "Architected scalable microservices using Node.js and AWS, supporting a 200% increase in active daily users.",
-        "Mentored a team of 5 junior developers, improving code review turnaround time by 40%."
-      ]
-    },
-    {
-      title: "Mobile App Developer",
-      company: "AppSphere Inc",
-      date: "2018 — 2021",
-      bullets: [
-        "Developed and launched 4 top-ranking iOS applications using Swift and Objective-C.",
-        "Implemented robust CI/CD pipelines with GitHub Actions and Fastlane, reducing deployment time by 50%.",
-        "Collaborated with product designers to create award-winning UI/UX interfaces."
-      ]
-    },
-    {
-      title: "Web Developer",
-      company: "Creative Digital",
-      date: "2016 — 2018",
-      bullets: [
-        "Built responsive web applications using React and Redux.",
-        "Optimized frontend performance, achieving a Lighthouse score of 98/100 across all core pages."
-      ]
-    }
-  ];
-
   return (
-    <section id="experience" className="py-16 px-6 max-w-4xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold text-space mb-16 tracking-tight">Experience</h2>
+    <section id="experience" className="px-8 py-10 md:px-16 lg:px-24">
+      <div className="mb-5 flex items-center gap-2">
+        <span className="h-3 w-3 flex-shrink-0 rounded-full bg-indigo" />
+        <h2 className="text-2xl font-bold text-space">Experience</h2>
+      </div>
 
-      <div className="relative border-l border-gray-200 ml-3 md:ml-0">
-        {experiences.map((exp, index) => (
-          <div key={index} className={`ml-8 md:ml-12 relative ${index !== experiences.length - 1 ? 'mb-16' : ''}`}>
-            <span className="absolute -left-[41px] md:-left-[57px] flex items-center justify-center w-5 h-5 rounded-full bg-snow border-2 border-indigo ring-4 ring-white"></span>
+      <div className="space-y-4">
+        {experiences.map((experience) => {
+          const Icon = experience.icon;
 
-            <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-4">
-              <h3 className="text-xl font-bold text-space">{exp.title}</h3>
-              <time className="text-sm font-medium text-indigo mt-1 md:mt-0">{exp.date}</time>
-            </div>
-            <h4 className="text-md font-medium text-space-light mb-4">{exp.company}</h4>
+          return (
+            <article
+              key={`${experience.role}-${experience.company}`}
+              className="grid overflow-hidden rounded-lg border border-gray-200 bg-white-adaptive shadow-[0_3px_18px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-indigo/30 hover:shadow-[0_14px_34px_rgba(111,0,255,0.1)] dark:border-gray-800 md:min-h-[118px] md:grid-cols-[96px_minmax(0,1fr)_210px]"
+            >
+              <div className="relative flex items-center justify-center border-b border-gray-200 px-4 py-4 dark:border-gray-800 md:border-b-0 md:border-r">
+                <div className="grid justify-items-center gap-2 text-center text-xs font-bold uppercase tracking-wide text-space-light">
+                  <p>{experience.dateRange[0]}</p>
+                  <div className="h-7 w-0.5 rounded-full bg-indigo/70 dark:bg-indigo" />
+                  <p>{experience.dateRange[1]}</p>
+                </div>
+                <span className="absolute right-[-4px] top-1/2 hidden h-2 w-2 -translate-y-1/2 rounded-full bg-indigo ring-4 ring-white-adaptive md:block" />
+              </div>
 
-            <ul className="space-y-3">
-              {exp.bullets.map((bullet, idx) => (
-                <li key={idx} className="text-space-light leading-relaxed flex gap-3">
-                  <span className="text-indigo mt-1.5">•</span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+              <div className="px-6 py-4">
+                <h3 className="text-base font-bold text-indigo">{experience.role}</h3>
+                <p className="mt-1 text-sm font-semibold text-space">{experience.company}</p>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-xs leading-5 text-space-light">
+                  {experience.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="hidden items-center justify-center px-7 text-[#17325c] dark:text-indigo md:flex">
+                <div className="flex items-center gap-3">
+                  <Icon className="h-10 w-10 text-indigo" strokeWidth={1.8} />
+                  <p className="max-w-[120px] text-lg font-extrabold leading-5">
+                    {experience.accent}
+                  </p>
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

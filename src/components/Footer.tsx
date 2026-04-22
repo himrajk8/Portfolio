@@ -2,6 +2,7 @@
 
 import { Send, Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
+import ResumeCertificates from "./ResumeCertificates";
 
 export default function Footer() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -45,14 +46,16 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="text-space pt-24 pb-8 px-8 md:px-16 lg:px-24 relative overflow-hidden">
+    <footer id="contact" className="text-space pt-10 pb-8 px-8 md:px-16 lg:px-24 relative overflow-hidden">
       {/* Main two-column section */}
-      <div className="w-full mb-16">
+      <div className="w-full mb-8">
+        <ResumeCertificates />
+
         {/* Title — unchanged */}
         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-center">
           Currently open to new opportunities.
         </h2>
-        <p className="text-xl text-space-light mb-16 text-center">
+        <p className="text-xl text-space-light mb-8 text-center">
           Let&apos;s discuss how I can contribute to your engineering team.
         </p>
 
