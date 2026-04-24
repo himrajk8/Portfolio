@@ -54,4 +54,30 @@ body {
   .glass {
     @apply bg-glass backdrop-blur-lg border border-glass-border shadow-[0_8px_32px_rgba(0,0,0,0.04)];
   }
+
+  .hero-typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: 0.08em solid currentColor;
+    animation:
+      hero-typing 2.2s steps(17, end) 0.2s forwards,
+      hero-cursor 0.9s step-end infinite;
+  }
+}
+
+@keyframes hero-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17ch;
+  }
+}
+
+@keyframes hero-cursor {
+  50% {
+    border-color: transparent;
+  }
 }

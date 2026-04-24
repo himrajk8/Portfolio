@@ -27,7 +27,7 @@ const experiences = [
 
 export default function Timeline() {
   return (
-    <section id="experience" className="px-8 py-10 md:px-16 lg:px-24">
+    <section id="experience" className="scroll-mt-24 px-8 py-10 md:px-16 lg:px-24">
       <div className="mb-5 flex items-center gap-2">
         <span className="h-3 w-3 flex-shrink-0 rounded-full bg-indigo" />
         <h2 className="text-2xl font-bold text-space">Experience</h2>

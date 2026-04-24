@@ -51,7 +51,7 @@ const techStack = [
 
 export default function AboutMe() {
   return (
-    <section id="about" className="py-10 px-8 md:px-16 lg:px-24">
+    <section id="about" className="scroll-mt-24 py-10 px-8 md:px-16 lg:px-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
 
         {/* ── LEFT: About Me ── */}

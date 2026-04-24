@@ -12,7 +12,6 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-space-light">
           <a href="#" className="text-indigo transition-colors">Home</a>
           <a href="#about" className="hover:text-indigo transition-colors">About</a>
-          <a href="#skills" className="hover:text-indigo transition-colors">Skills</a>
           <a href="#projects" className="hover:text-indigo transition-colors">Projects</a>
           <a href="#experience" className="hover:text-indigo transition-colors">Experience</a>
           <a href="#resume" className="hover:text-indigo transition-colors">Resume</a>

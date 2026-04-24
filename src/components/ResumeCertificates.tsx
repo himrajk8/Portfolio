@@ -59,7 +59,7 @@ function CertificateCard({
 
 export default function ResumeCertificates() {
   return (
-    <section id="resume" className="mb-10 grid grid-cols-1 gap-8 xl:grid-cols-[0.42fr_0.58fr]">
+    <section id="resume" className="scroll-mt-24 mb-10 grid grid-cols-1 gap-8 xl:grid-cols-[0.42fr_0.58fr]">
       <div>
         <div className="mb-5 flex items-center gap-2">
           <span className="h-3 w-3 flex-shrink-0 rounded-full bg-indigo" />
@@ -70,7 +70,11 @@ export default function ResumeCertificates() {
           <div className="overflow-hidden rounded-lg border border-gray-200 bg-white-adaptive p-5 shadow-[0_3px_18px_rgba(15,23,42,0.06)] dark:border-gray-800">
             <div className="flex gap-5">
               <div className="w-16 flex-shrink-0">
-                <div className="h-20 w-16 rounded bg-gradient-to-br from-slate-200 to-slate-400" />
+                <img
+                  src="/profile-photo.jpg"
+                  alt="Him Raj profile"
+                  className="h-20 w-16 rounded object-cover"
+                />
                 <div className="mt-5 text-[10px] font-semibold text-space-light">
                   <p className="mb-2 text-space">SKILLS</p>
                   <div className="space-y-0.5">

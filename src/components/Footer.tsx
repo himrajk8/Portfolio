@@ -1,7 +1,8 @@
 "use client";
 
-import { Send, Mail, Phone, MapPin } from "lucide-react";
+import { Send, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import { useState } from "react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import ResumeCertificates from "./ResumeCertificates";
 
 export default function Footer() {
@@ -46,7 +47,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="text-space pt-10 pb-8 px-8 md:px-16 lg:px-24 relative overflow-hidden">
+    <footer id="contact" className="scroll-mt-24 text-space pt-10 pb-8 px-8 md:px-16 lg:px-24 relative overflow-hidden">
       {/* Main two-column section */}
       <div className="w-full mb-8">
         <ResumeCertificates />
@@ -59,7 +60,7 @@ export default function Footer() {
           Let&apos;s discuss how I can contribute to your engineering team.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-[1fr_1fr_240px] gap-8 items-start">
           {/* ── LEFT: contact info ── */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -116,7 +117,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ── RIGHT: contact form ── */}
+          {/* ── MIDDLE: contact form ── */}
           <form
             onSubmit={handleSubmit}
             className="bg-white-adaptive border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-xl space-y-4"
@@ -172,12 +173,55 @@ export default function Footer() {
               </p>
             )}
           </form>
+
+          {/* ── RIGHT: social links ── */}
+          <div className="bg-white-adaptive border border-gray-200 dark:border-gray-800 rounded-2xl p-5 shadow-xl">
+            <h4 className="text-lg font-bold text-space">Connect with me</h4>
+            <div className="mt-4 space-y-4">
+              <a
+                href="https://www.linkedin.com/in/himrajk8/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-3 text-space-light transition-colors hover:text-indigo"
+              >
+                <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-md bg-indigo/10 text-indigo">
+                  <FaLinkedinIn className="h-4 w-4" />
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-space">LinkedIn</span>
+                  <span className="block text-xs">linkedin.com/in/himrajk8</span>
+                </span>
+              </a>
+              <a
+                href="https://github.com/himrajk8"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start gap-3 text-space-light transition-colors hover:text-indigo"
+              >
+                <span className="mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-md bg-indigo/10 text-indigo">
+                  <FaGithub className="h-4 w-4" />
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-space">GitHub</span>
+                  <span className="block text-xs">github.com/himrajk8</span>
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="flex items-center justify-center text-sm text-space-light border-t border-gray-200 dark:border-gray-800 pt-8">
-        <p>© {new Date().getFullYear()} Him Raj. All rights reserved.</p>
+      <div className="grid grid-cols-3 items-center text-sm text-space-light border-t border-gray-200 dark:border-gray-800 pt-8">
+        <div />
+        <p className="text-center">© {new Date().getFullYear()} Him Raj. All rights reserved.</p>
+        <a
+          href="#"
+          className="justify-self-end inline-flex items-center gap-1.5 font-medium text-space-light transition-colors hover:text-indigo"
+        >
+          Back to top
+          <ArrowUp className="h-4 w-4" />
+        </a>
       </div>
     </footer>
   );

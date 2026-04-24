@@ -3,41 +3,33 @@ import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Fake News Detection",
+    title: "Portfolio Website",
     description:
-      "A machine learning model that classifies news as real or fake using NLP and TF-IDF.",
-    category: "ML / NLP",
-    tags: ["Python", "Scikit-learn", "Streamlit"],
-    githubUrl: "https://github.com/himrajk8",
-    liveUrl: "https://github.com/himrajk8",
-    visual: "fake-news",
-  },
-  {
-    title: "Traffic Sign Detection",
-    description: "Detects and classifies traffic signs using CNN and OpenCV.",
-    category: "Computer Vision",
-    tags: ["Python", "OpenCV", "TensorFlow"],
-    githubUrl: "https://github.com/himrajk8",
-    liveUrl: "https://github.com/himrajk8",
-    visual: "traffic",
+      "My personal portfolio website built with React and Tailwind CSS, showcasing projects and experience.",
+    category: "Frontend",
+    tags: ["React", "Tailwind CSS", "TypeScript"],
+    githubUrl: "https://github.com/himrajk8/Portfolio",
+    liveUrl: "https://github.com/himrajk8/Portfolio",
+    visual: "portfolio",
   },
   {
     title: "Weather App",
     description: "Real-time weather application with location search and forecast.",
     category: "Web App",
     tags: ["React", "API", "Tailwind CSS"],
-    githubUrl: "https://github.com/himrajk8",
-    liveUrl: "https://github.com/himrajk8",
+    githubUrl: "https://github.com/himrajk8/Weather-app",
+    liveUrl: "https://github.com/himrajk8/Weather-app",
     visual: "weather",
   },
   {
-    title: "Portfolio Website",
-    description: "My personal portfolio built with React and Tailwind CSS.",
-    category: "Frontend",
-    tags: ["React", "Tailwind CSS"],
-    githubUrl: "https://github.com/himrajk8/Portfolio",
-    liveUrl: "https://github.com/himrajk8/Portfolio",
-    visual: "portfolio",
+    title: "NexDo",
+    description:
+      "A task and activity tracker built with React, TypeScript, and Vite for fast, responsive workflow management.",
+    category: "Web App",
+    tags: ["React", "TypeScript", "Vite"],
+    githubUrl: "https://github.com/himrajk8/NexDo",
+    liveUrl: "https://github.com/himrajk8/NexDo",
+    visual: "todo",
   },
 ];
 
@@ -91,13 +83,47 @@ function ProjectVisual({ type, title }: { type: string; title: string }) {
           <p className="text-xl font-extrabold leading-tight text-space">
             Software Engineer.
             <br />
-            <span className="text-indigo">Web &amp; Mobile Specialist.</span>
+            <span className="text-indigo">Web Development Specialist.</span>
           </p>
           <div className="mt-4 h-2 w-28 rounded-full bg-indigo/20" />
           <div className="mt-2 h-2 w-20 rounded-full bg-indigo/10" />
         </div>
         <div className="absolute bottom-5 left-6 rounded bg-indigo/10 px-3 py-1 text-xs font-bold text-indigo">
           Frontend
+        </div>
+      </div>
+    );
+  }
+
+  if (type === "todo") {
+    return (
+      <div className="relative h-full overflow-hidden bg-[#0d1b2f] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(110,231,255,0.15),transparent_30%),linear-gradient(130deg,#0b1220,#13263f)]" />
+        <div className="absolute left-6 top-7 max-w-[48%]">
+          <h3 className="text-2xl font-extrabold leading-tight">{title}</h3>
+          <p className="mt-2 text-[10px] font-semibold text-cyan-300">
+            Advanced to-do workflow
+          </p>
+        </div>
+        <div className="absolute right-6 top-6 w-40 rounded-xl border border-slate-300/20 bg-slate-100/95 p-3 text-slate-700 shadow-2xl">
+          <div className="mb-2 h-2 w-16 rounded bg-slate-300" />
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-1.5">
+              <div className="h-2.5 w-2.5 rounded-sm bg-emerald-400" />
+              <div className="h-2 w-full rounded bg-slate-200" />
+            </div>
+            <div className="flex items-center gap-1.5">
+              <div className="h-2.5 w-2.5 rounded-sm bg-indigo-400" />
+              <div className="h-2 w-[84%] rounded bg-slate-200" />
+            </div>
+            <div className="flex items-center gap-1.5">
+              <div className="h-2.5 w-2.5 rounded-sm bg-amber-400" />
+              <div className="h-2 w-[68%] rounded bg-slate-200" />
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-5 left-6 rounded bg-indigo/30 px-3 py-1 text-xs font-bold text-violet-100">
+          Task Manager
         </div>
       </div>
     );
@@ -130,7 +156,7 @@ function ProjectVisual({ type, title }: { type: string; title: string }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-8 py-10 md:px-16 lg:px-24">
+    <section id="projects" className="scroll-mt-24 px-8 py-10 md:px-16 lg:px-24">
       <div className="mb-6 flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <span className="h-3 w-3 flex-shrink-0 rounded-full bg-indigo" />
@@ -148,9 +174,9 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <article
-            key={project.title}
+            key={`${project.title}-${index}`}
             className="group overflow-hidden rounded-lg border border-gray-200 bg-white-adaptive shadow-[0_3px_18px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-indigo/30 hover:shadow-[0_14px_34px_rgba(111,0,255,0.12)] dark:border-gray-800"
           >
             <div className="aspect-[16/8.7] overflow-hidden">
@@ -175,15 +201,17 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex shrink-0 items-center gap-3 text-space">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open ${project.title}`}
-                    className="transition-colors hover:text-indigo"
-                  >
-                    <ExternalLink className="h-5 w-5" />
-                  </a>
+                  {project.title === "Portfolio Website" && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open ${project.title}`}
+                      className="transition-colors hover:text-indigo"
+                    >
+                      <ExternalLink className="h-5 w-5" />
+                    </a>
+                  )}
                   <a
                     href={project.githubUrl}
                     target="_blank"

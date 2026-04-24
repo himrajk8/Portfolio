@@ -15,15 +15,15 @@ export default function Hero() {
           </div>
 
           <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.08] text-space md:text-6xl">
-            Software Engineer.
+            <span className="hero-typing">Software Engineer.</span>
             <br />
-            <span className="text-indigo">Web &amp; Mobile Specialist.</span>
+            <span className="text-indigo">Web Development Specialist.</span>
             <br />
             Ready for scale.
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-7 text-space-light">
-            I build robust, scalable and user-centric web and mobile applications
+            I build robust, scalable and user-centric web applications
             that solve real-world problems and deliver exceptional experiences.
           </p>
 
