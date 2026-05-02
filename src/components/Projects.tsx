@@ -57,16 +57,19 @@ function ProjectVisual({ type, title }: { type: string; title: string }) {
     return (
       <div className="relative h-full overflow-hidden bg-[#1477bd] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_15%,rgba(255,255,255,0.45),transparent_18%),linear-gradient(135deg,#0d66a7,#1e8ed6)]" />
-        <div className="absolute right-12 top-7 h-9 w-16 rounded-full bg-white/90 shadow-lg before:absolute before:-top-4 before:left-5 before:h-9 before:w-9 before:rounded-full before:bg-white after:absolute after:-top-2 after:right-3 after:h-7 after:w-7 after:rounded-full after:bg-white" />
-        <div className="absolute left-7 top-9">
-          <p className="text-3xl font-bold">24°C</p>
-          <p className="text-xs text-white/80">New York, USA</p>
+        {/* Sun */}
+        <div className="absolute right-10 top-5 h-12 w-12 rounded-full bg-yellow-300 shadow-[0_0_24px_8px_rgba(253,224,71,0.4)]" />
+        <div className="absolute left-7 top-8">
+          <p className="text-3xl font-bold">32°C</p>
+          <p className="text-xs text-white/80 mt-0.5">Bengaluru, India</p>
+          <p className="text-[10px] text-white/60 mt-0.5">Partly Cloudy · Humidity 68%</p>
         </div>
-        <div className="absolute inset-x-7 bottom-7 grid grid-cols-5 gap-3">
-          {["Mon", "Tue", "Wed", "Thu", "Fri"].map((day) => (
-            <div key={day} className="rounded-md bg-white/10 p-2 text-center backdrop-blur">
-              <div className="mx-auto mb-1 h-3 w-3 rounded-full bg-yellow-300" />
-              <p className="text-[9px] font-semibold">{day}</p>
+        <div className="absolute inset-x-5 bottom-5 grid grid-cols-5 gap-2">
+          {[["Mon", "☀️", "34°"], ["Tue", "🌤", "31°"], ["Wed", "🌦", "28°"], ["Thu", "⛅", "30°"], ["Fri", "☀️", "33°"]].map(([day, icon, temp]) => (
+            <div key={day} className="flex flex-col items-center rounded-lg bg-white/15 px-1 py-2 backdrop-blur gap-0.5">
+              <span className="text-base leading-none">{icon}</span>
+              <p className="text-[8px] font-bold uppercase tracking-wide">{day}</p>
+              <p className="text-[9px] font-semibold text-yellow-200">{temp}</p>
             </div>
           ))}
         </div>
@@ -76,20 +79,37 @@ function ProjectVisual({ type, title }: { type: string; title: string }) {
 
   if (type === "portfolio") {
     return (
-      <div className="relative h-full overflow-hidden bg-[#fbf8ff] dark:bg-[#131827]">
-        <div className="absolute inset-x-4 top-4 h-2 rounded-full bg-violet-100 dark:bg-white/10" />
-        <div className="absolute right-5 top-7 h-20 w-20 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-400 shadow-lg" />
-        <div className="absolute left-6 top-10 max-w-[58%]">
-          <p className="text-xl font-extrabold leading-tight text-space">
-            Software Engineer.
-            <br />
-            <span className="text-indigo">Web Development Specialist.</span>
+      <div className="relative h-full overflow-hidden bg-[#0d1b2f] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(111,0,255,0.15),transparent_40%),linear-gradient(130deg,#0b1220,#13263f)]" />
+        <div className="absolute left-5 top-6 max-w-[55%] lg:left-6 lg:top-7 lg:max-w-[48%]">
+          <h3 className="text-xl font-extrabold leading-tight lg:text-2xl">{title}</h3>
+          <p className="mt-2 text-[10px] font-semibold text-violet-300">
+            Personal developer portfolio
           </p>
-          <div className="mt-4 h-2 w-28 rounded-full bg-indigo/20" />
-          <div className="mt-2 h-2 w-20 rounded-full bg-indigo/10" />
         </div>
-        <div className="absolute bottom-5 left-6 rounded bg-indigo/10 px-3 py-1 text-xs font-bold text-indigo">
-          Frontend
+        <div className="absolute right-4 top-5 w-40 origin-top-right scale-75 rounded-xl border border-violet-300/20 bg-slate-100/95 p-3 text-slate-700 shadow-2xl sm:scale-90 md:scale-75 lg:right-6 lg:top-6 lg:scale-[0.70] xl:scale-[0.85] 2xl:scale-100">
+          <div className="mb-2 h-2 w-14 rounded bg-slate-300" />
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-1.5">
+              <div className="h-2.5 w-2.5 rounded-sm bg-violet-500" />
+              <div className="h-2 w-full rounded bg-slate-200" />
+            </div>
+            <div className="flex items-center gap-1.5">
+              <div className="h-2.5 w-2.5 rounded-sm bg-indigo-400" />
+              <div className="h-2 w-[80%] rounded bg-slate-200" />
+            </div>
+            <div className="flex items-center gap-1.5">
+              <div className="h-2.5 w-2.5 rounded-sm bg-emerald-400" />
+              <div className="h-2 w-[60%] rounded bg-slate-200" />
+            </div>
+            <div className="flex items-center gap-1.5">
+              <div className="h-2.5 w-2.5 rounded-sm bg-pink-400" />
+              <div className="h-2 w-[72%] rounded bg-slate-200" />
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-5 left-5 rounded bg-violet-500/20 px-3 py-1 text-xs font-bold text-violet-200 lg:left-6">
+          React · Next.js
         </div>
       </div>
     );
@@ -99,13 +119,13 @@ function ProjectVisual({ type, title }: { type: string; title: string }) {
     return (
       <div className="relative h-full overflow-hidden bg-[#0d1b2f] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(110,231,255,0.15),transparent_30%),linear-gradient(130deg,#0b1220,#13263f)]" />
-        <div className="absolute left-6 top-7 max-w-[48%]">
-          <h3 className="text-2xl font-extrabold leading-tight">{title}</h3>
+        <div className="absolute left-5 top-6 max-w-[55%] lg:left-6 lg:top-7 lg:max-w-[48%]">
+          <h3 className="text-xl font-extrabold leading-tight lg:text-2xl">{title}</h3>
           <p className="mt-2 text-[10px] font-semibold text-cyan-300">
             Advanced to-do workflow
           </p>
         </div>
-        <div className="absolute right-6 top-6 w-40 rounded-xl border border-slate-300/20 bg-slate-100/95 p-3 text-slate-700 shadow-2xl">
+        <div className="absolute right-4 top-5 w-40 origin-top-right scale-75 rounded-xl border border-slate-300/20 bg-slate-100/95 p-3 text-slate-700 shadow-2xl sm:scale-90 md:scale-75 lg:right-6 lg:top-6 lg:scale-[0.70] xl:scale-[0.85] 2xl:scale-100">
           <div className="mb-2 h-2 w-16 rounded bg-slate-300" />
           <div className="space-y-1.5">
             <div className="flex items-center gap-1.5">
@@ -122,7 +142,7 @@ function ProjectVisual({ type, title }: { type: string; title: string }) {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-5 left-6 rounded bg-indigo/30 px-3 py-1 text-xs font-bold text-violet-100">
+        <div className="absolute bottom-5 left-5 rounded bg-indigo/30 px-3 py-1 text-xs font-bold text-violet-100 lg:left-6">
           Task Manager
         </div>
       </div>
@@ -156,7 +176,7 @@ function ProjectVisual({ type, title }: { type: string; title: string }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="scroll-mt-24 px-8 py-10 md:px-16 lg:px-24">
+    <section id="projects" className="scroll-mt-24 px-5 py-10 sm:px-8 md:px-16 lg:px-24">
       <div className="mb-6 flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <span className="h-3 w-3 flex-shrink-0 rounded-full bg-indigo" />
@@ -173,24 +193,31 @@ export default function Projects() {
         </a>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {projects.map((project, index) => (
           <article
             key={`${project.title}-${index}`}
-            className="group overflow-hidden rounded-lg border border-gray-200 bg-white-adaptive shadow-[0_3px_18px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-indigo/30 hover:shadow-[0_14px_34px_rgba(111,0,255,0.12)] dark:border-gray-800"
+            className="group overflow-hidden rounded-xl border border-gray-200 bg-white-adaptive shadow-[0_3px_18px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-indigo/30 hover:shadow-[0_14px_34px_rgba(111,0,255,0.12)] dark:border-gray-800"
           >
-            <div className="aspect-[16/8.7] overflow-hidden">
+            {/* Visual Banner */}
+            <div className="aspect-[16/9] overflow-hidden">
               <ProjectVisual type={project.visual} title={project.title} />
             </div>
 
-            <div className="flex min-h-[174px] flex-col p-4">
-              <h3 className="text-lg font-bold text-indigo">{project.title}</h3>
-              <p className="mt-3 min-h-[48px] text-sm leading-6 text-space-light">
+            {/* Card Body */}
+            <div className="flex flex-col gap-3 p-4">
+              {/* Title */}
+              <h3 className="text-base font-bold leading-snug text-indigo">{project.title}</h3>
+
+
+              {/* Description */}
+              <p className="text-sm leading-6 text-space-light">
                 {project.description}
               </p>
 
-              <div className="mt-auto flex items-end justify-between gap-3 pt-5">
-                <div className="flex flex-wrap gap-2">
+              {/* Tags + Links row */}
+              <div className="flex items-center justify-between gap-2 pt-1">
+                <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -201,7 +228,7 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex shrink-0 items-center gap-3 text-space">
-                  {project.title === "Portfolio Website" && (
+                  {project.liveUrl && project.title !== "Portfolio Website" ? null : project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"

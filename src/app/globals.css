@@ -51,33 +51,33 @@ body {
 }
 
 @layer utilities {
+  /* Fix: avoid @apply with arbitrary values containing commas (Tailwind v4 limitation) */
   .glass {
-    @apply bg-glass backdrop-blur-lg border border-glass-border shadow-[0_8px_32px_rgba(0,0,0,0.04)];
+    background-color: var(--theme-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--theme-glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
   }
 
-  .hero-typing {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    border-right: 0.08em solid currentColor;
-    animation:
-      hero-typing 2.2s steps(17, end) 0.2s forwards,
-      hero-cursor 0.9s step-end infinite;
+  /* Apple-style masked slide-up reveal */
+  .hero-slide {
+    opacity: 0;
+    transform: translateY(70%);
+    animation-name: hero-slide-up;
+    animation-duration: 0.9s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: forwards;
   }
 }
 
-@keyframes hero-typing {
+@keyframes hero-slide-up {
   from {
-    width: 0;
+    opacity: 0;
+    transform: translateY(70%);
   }
   to {
-    width: 17ch;
-  }
-}
-
-@keyframes hero-cursor {
-  50% {
-    border-color: transparent;
+    opacity: 1;
+    transform: translateY(0);
   }
 }

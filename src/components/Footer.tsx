@@ -3,7 +3,6 @@
 import { Send, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import { useState } from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import ResumeCertificates from "./ResumeCertificates";
 
 export default function Footer() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -47,10 +46,11 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="scroll-mt-24 text-space pt-10 pb-8 px-8 md:px-16 lg:px-24 relative overflow-hidden">
+    <footer className="text-space pt-10 pb-8 px-8 md:px-16 lg:px-24 relative overflow-hidden">
+      {/* Anchor for contact nav link */}
+      <div id="contact" className="scroll-mt-24" />
       {/* Main two-column section */}
       <div className="w-full mb-8">
-        <ResumeCertificates />
 
         {/* Title — unchanged */}
         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 text-center">
@@ -212,14 +212,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="grid grid-cols-3 items-center text-sm text-space-light border-t border-gray-200 dark:border-gray-800 pt-8">
-        <div />
+      <div className="relative flex items-center justify-center text-sm text-space-light border-t border-gray-200 dark:border-gray-800 pt-8">
         <p className="text-center">© {new Date().getFullYear()} Him Raj. All rights reserved.</p>
         <a
           href="#"
-          className="justify-self-end inline-flex items-center gap-1.5 font-medium text-space-light transition-colors hover:text-indigo"
+          className="absolute right-0 inline-flex items-center gap-1.5 font-medium text-space-light transition-colors hover:text-indigo"
         >
-          Back to top
+          <span className="hidden sm:inline">Back to top</span>
           <ArrowUp className="h-4 w-4" />
         </a>
       </div>
